@@ -24,11 +24,14 @@ app.use("/api/message", messageRoutes);
 // --------------------------deployment------------------------------
 
 // console.log("dirname",path.join((__dirname, '..', 'frontend/build/index.html')))
-app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+const buildPath = path.join(__dirname, 'frontend', 'build');
 
-app.get('*',(req,res)=>{
-  res.sendFile(path.join((__dirname, 'frontend/build/index.html')))
-})
+console.log("bpth",buildPath)
+app.use(express.static(buildPath));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
 
 // --------------------------deployment------------------------------
 
