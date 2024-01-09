@@ -100,7 +100,7 @@ const sendMailtoAll = async(req,res)=>{
       to: email,
       subject: 'Request to join the group',
       text: `You were requested to join the group, if you want to join the group please
-      click on the link http://localhost:3000/joingrp/${req.chatId}/${users[ind]}`
+      click on the link https://chatappn.onrender.com/joingrp/${req.chatId}/${users[ind]}`
     };
   
     try {
@@ -228,7 +228,7 @@ const sendMailReq = async(req,res,next)=>{
     to: email,
     subject: 'Request to join the group',
     text: `You were requested to join the group,if you want to join the group please
-    click on the link http://localhost:3000/joingrp/${chatId}/${userId}`
+    click on the link https://chatappn.onrender.com/joingrp/${chatId}/${userId}`
   };
 
   transporter.sendMail(mailOptions, function(error, info){
